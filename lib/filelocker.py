@@ -7,8 +7,11 @@ MAX_PIN_LEN_BEFORE_WARNING = 4
 
 
 def lock_file(file_path, pin, long_pin=False):
-    str_pin = str(pin)
-    pin_len = len(str_pin)
+    # Make sure the pin is all numerical.
+    if not pin.isdigit():
+        raise ValueError('Pin must be entirely numerical.')
+
+    pin_len = len(pin)
 
     # Check if the pin is long, and make sure the user knows what they are doing.
     if pin_len > MAX_PIN_LEN_BEFORE_WARNING and not long_pin:
@@ -34,6 +37,6 @@ def lock_file(file_path, pin, long_pin=False):
     # Move the file or directory into the appropriate folder.
     move(file_path, '{}.locked/{}/{}'.format(
         file_path,
-        '/'.join(list(str_pin)),
+        '/'.join(list(pin)),
         basename(file_path),
     ))

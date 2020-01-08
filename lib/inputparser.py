@@ -11,7 +11,7 @@ def parse_input():
     )
     argument_parser.add_argument(
         'pin',
-        type=int,  # TODO: This actually needs to be a string so that it can be zero padded.
+        type=str,
         help='the pin number to lock the file with',
     )
     argument_parser.add_argument(
