@@ -8,7 +8,7 @@ def parse_input():
         'filename',
         type=str,
         help='the name of the file to lock',
-    )  # TODO: This can easily support directories as long as the slash is stripped.
+    )
     argument_parser.add_argument(
         'pin',
         type=int,  # TODO: This actually needs to be a string so that it can be zero padded.
@@ -25,7 +25,7 @@ def parse_input():
     args = argument_parser.parse_args()
 
     return (
-        args.filename,
+        args.filename.strip('/'),
         args.pin,
         args.long,
     )
