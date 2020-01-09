@@ -5,7 +5,7 @@ The ~~most secure~~ worst way to protect your files.
 ![Demo](demo.gif)
 
 ### Usage
-Run the following command to lock a file or directory path `./supersecretfilelocker.py <file/directory path> <pin>`.
+Run the following command to lock a file or directory `./supersecretfilelocker.py <file/directory path> <pin>`.
 
 The pin must be numerical. To use a pin longer than 4 digits, you must specify `-l` or `--long`.
 
